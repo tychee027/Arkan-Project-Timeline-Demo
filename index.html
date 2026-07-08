@@ -194,7 +194,14 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sa
 </style>
 </head>
 <body>
+<script type="module" src="script.js">
+  <script type="module">
+  import { loadAll, addProject, addTask, deleteTask } from './script.js'
 
+  // Load everything on startup
+  const { projects, tasks } = await loadAll()
+  console.log(projects, tasks)
+</script>
 <!-- ══ TOAST ══ -->
 <div id="toast"><i class="ti ti-check" id="toast-icon"></i><span id="toast-msg"></span></div>
 
