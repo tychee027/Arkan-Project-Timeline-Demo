@@ -746,9 +746,9 @@ async function importDrawingSummaryReport(aoa, headerRowIdx){
     const contractor = idxContractor !== -1 ? String(r[idxContractor]||'').trim() : '';
     const overallStatus = idxOverallStatus !== -1 ? String(r[idxOverallStatus]||'').trim() : '';
 
-    const idParts = [clientNo, jobOrderNo, unitNo].filter(Boolean);
+    const idParts = [clientNo, jobOrderNo].filter(Boolean);
     const name = idParts.length
-      ? `${idParts.join(' / ')} — ${projectNameRaw || 'Unit'}`
+      ? `${idParts.join('-')} — ${projectNameRaw || 'Unit'}`
       : (projectNameRaw || 'Unit');
     const descParts = [];
     if(category) descParts.push(category);
